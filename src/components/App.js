@@ -1,8 +1,14 @@
+import Welcome from "./Welcome";
+
 function App(){
   return(
-    <div>
-      aaaaaaaaaaaaaaaa
-    </div>
+    <>
+      <Welcome />
+      
+      <footer className="hidden">
+        teste123
+      </footer>
+    </>
   );  
 }
 
