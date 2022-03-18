@@ -41,9 +41,11 @@ function Deck(props){
   deck1.sort( () => Math.random() - 0.5 );
   
   return(
-    <div className={className}>
-      <img src="./images/logo.png" alt="logo" /> 
-      ZapRecall!
+    <div className={"deck " + className}>
+      <div className="header">
+        <img src="./images/logo.png" alt="logo" /> 
+        <span>ZapRecall</span>
+      </div>
       {        
         deck1.map( ( {question,answer}, index ) => {
           return (
