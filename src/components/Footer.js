@@ -1,8 +1,8 @@
 function Footer(props){
-  const { className } = props;
+  const { className, length, answered } = props;
   return(
     <footer className={className}>
-      teste123
+      {answered}/{length} CONCLUÍDOS
     </footer>
   );
 }

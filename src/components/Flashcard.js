@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 function Flashcard(props){
-  const {index, question, answer} = props;
+  const {index, question, answer, answered} = props;
 
   const [hiddenCard, setHiddenCard] = useState(false);
   const [hiddenQuestion, setHiddenQuestion] = useState(true) ;
@@ -9,15 +9,14 @@ function Flashcard(props){
   const [hiddenAnsweredCard, setHiddenAnsweredCard] = useState(true) ;
   const [typeAnswer, setTypeAnswer] = useState('') ;
   const [icon, setIcon] = useState('') ;
-
   
   function selectAnswer(type){
     setHiddenAnswer(!hiddenAnswer);
     setHiddenAnsweredCard(!hiddenAnsweredCard);
-    
+  
     if (type==='not'){
       setTypeAnswer('not');
-      setIcon('add-circle');
+      setIcon('add-circle');     
     } else if (type==='almost'){
       setTypeAnswer('almost');
       setIcon('help-circle');
@@ -25,6 +24,7 @@ function Flashcard(props){
       setTypeAnswer('zap');
       setIcon('checkmark-circle');
     }
+    answered(1);   
   }
   
 

@@ -1,7 +1,16 @@
-import Flashcard from "./Flashcard";
+import { useState } from 'react';
+
+import Flashcard from './Flashcard';
+import Footer from './Footer';
 
 function Deck(props){
   const { className } = props;
+
+  const [answered, setAnswered] = useState(0);
+  
+  function addAnswered(value){
+    setAnswered(answered + value);
+  }
 
   const deck1=[
     {
@@ -41,19 +50,23 @@ function Deck(props){
   deck1.sort( () => Math.random() - 0.5 );
   
   return(
-    <div className={"deck " + className}>
-      <div className="header">
-        <img src="./images/logo.png" alt="logo" /> 
-        <span>ZapRecall</span>
+    <>
+      <div className={"deck " + className}>
+        <div className="header">
+          <img src="./images/logo.png" alt="logo" /> 
+          <span>ZapRecall</span>
+        </div>
+        {        
+          deck1.map( ( {question,answer}, index ) => {
+            return (
+              <Flashcard key ={index} question={question} answer={answer} index={index+1} 
+                answered={addAnswered} /> 
+            );
+          })
+        }
       </div>
-      {        
-        deck1.map( ( {question,answer}, index ) => {
-          return (
-            <Flashcard key ={index} question={question} answer={answer} index={index+1} /> 
-          );
-        })
-      }
-    </div>
+      <Footer className={className} length={deck1.length} answered={answered} />
+    </>
   );
 }
 
