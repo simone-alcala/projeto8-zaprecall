@@ -2,8 +2,8 @@ function Flashcard(props){
   const {index, question, answer} = props;
   return(
     <>
-      <div className="deck">
-        PERGUNTA {index} {question}
+      <div className="card">
+        PERGUNTA {index} 
         
         <ion-icon name="play-outline"></ion-icon>
       </div>
@@ -13,4 +13,4 @@ function Flashcard(props){
 
 export default Flashcard;
 
-//RESPOSTA: {answer}
+//RESPOSTA: {answer} {question}

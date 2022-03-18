@@ -62,7 +62,7 @@ a {
   cursor: pointer;
 }
 
-.deck {
+.card {
   min-width: 182px;
   max-width: 340px;
   height: 40px;
@@ -80,12 +80,12 @@ a {
   border-radius: 5px;
 }
 
-.deck ion-icon {
+.card ion-icon {
   font-size: 20px;
   margin-left: 10px;
 }
 
-.deck ion-icon:hover {
+.card ion-icon:hover {
   cursor: pointer;
 }
 

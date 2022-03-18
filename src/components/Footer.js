@@ -1,6 +1,7 @@
-function Footer(){
+function Footer(props){
+  const { className } = props;
   return(
-    <footer className="hidden">
+    <footer className={className}>
       teste123
     </footer>
   );
