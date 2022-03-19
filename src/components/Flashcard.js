@@ -13,21 +13,21 @@ function Flashcard(props){
   function selectAnswer(type){
     setHiddenAnswer(!hiddenAnswer);
     setHiddenAnsweredCard(!hiddenAnsweredCard);
-  
-    if (type==='not'){
-      setTypeAnswer('not');
-      setIcon('add-circle');    
-      iconFooter('add-circle');
+
+      if (type==='not'){
+      setType('not', 'add-circle');
     } else if (type==='almost'){
-      setTypeAnswer('almost');
-      setIcon('help-circle');
-      iconFooter('help-circle');
+      setType('almost', 'help-circle');
     } else {
-      setTypeAnswer('zap');
-      setIcon('checkmark-circle');
-      iconFooter('checkmark-circle');
+      setType('zap', 'checkmark-circle');
     }
     answered(1);   
+  }
+
+  function setType( chosenAnswer , iconAnswer){
+    setTypeAnswer(chosenAnswer);
+    setIcon(iconAnswer);
+    iconFooter(iconAnswer);
   }
 
   return(
@@ -58,12 +58,12 @@ function Flashcard(props){
           <div className="answer">
             <div className="not-recall"        onClick={()=>{selectAnswer('not')}}   >Não lembrei</div>
             <div className="almost-not-recall" onClick={()=>{selectAnswer('almost')}}>Quase não lembrei</div>
-            <div className="recall"            onClick={()=>{selectAnswer('zap')}}>Zap</div>
+            <div className="recall"            onClick={()=>{selectAnswer('zap')}}   >Zap</div>
           </div>
         </div>
       }
 
-      {!hiddenAnsweredCard &&
+      { !hiddenAnsweredCard &&
         <div className={"card " + typeAnswer } >
           <span> Pergunta {index} </span>
           <ion-icon name={icon} ></ion-icon>
