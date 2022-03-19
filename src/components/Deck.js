@@ -7,9 +7,14 @@ function Deck(props){
   const { className } = props;
 
   const [answered, setAnswered] = useState(0);
+  const [icon, setIcon] = useState([]);
   
   function addAnswered(value){
     setAnswered(answered + value);
+  }
+
+  function addIcon(value){
+    setIcon([...icon,value]);
   }
 
   const deck1=[
@@ -60,12 +65,12 @@ function Deck(props){
           deck1.map( ( {question,answer}, index ) => {
             return (
               <Flashcard key ={index} question={question} answer={answer} index={index+1} 
-                answered={addAnswered} /> 
+                answered={addAnswered} iconFooter={addIcon} /> 
             );
           })
         }
       </div>
-      <Footer className={className} length={deck1.length} answered={answered} />
+      <Footer className={className} length={deck1.length} answered={answered} icons={icon}/>
     </>
   );
 }

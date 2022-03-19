@@ -209,10 +209,23 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-color: #ffffff;
   position: fixed;
   z-index: 1;
   bottom: 0;
+}
+
+.add-circle {
+  color: var(--not-recall);
+}
+
+.help-circle {
+  color: var(--almost-not-recall);
+}
+
+.checkmark-circle {
+  color: var(--recall);
 }
 
 .hidden {
