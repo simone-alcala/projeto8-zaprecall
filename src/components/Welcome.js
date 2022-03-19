@@ -19,7 +19,7 @@ function Welcome(props){
         setHidden(!hidden);
         hide(hidden);
       }}>
-        Iniciar Recal!
+        Iniciar Recall!
       </div>
 
     </div>
