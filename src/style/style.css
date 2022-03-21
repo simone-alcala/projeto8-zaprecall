@@ -222,6 +222,7 @@ footer {
   bottom: 0;
   padding: 5px 0;
   font-size: 18px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 }
 
 footer div {
@@ -267,4 +268,35 @@ footer .end {
 
 .checkmark-circle {
   color: var(--recall);
+}
+
+@media (min-width: 600px) {
+  :root {
+    --card-width: 567px;
+  }
+
+  .deck {
+    margin-bottom: 215px;
+  }
+
+  .card {
+    height: 92px;
+    font-size: 24px;
+  }
+
+  .card-question {
+    font-size: 24px;
+  }
+
+  .answer div {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  footer {
+    min-height: 118px;
+    max-height: 210px;
+    font-size: 32px;
+  }
 }
