@@ -268,7 +268,3 @@ footer .end {
 .checkmark-circle {
   color: var(--recall);
 }
-
-.hidden {
-  display: none;
-}

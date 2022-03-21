@@ -7,15 +7,10 @@ function App(){
 
   const [hidden, setHidden] = useState(true);
   
-  function hide(value){
-    setHidden(value);
-  }
- 
   return(
     <div className="container">
-      <Welcome hide={hide}/> 
-      <Deck className={hidden ? 'hidden' : ''} /> 
-      
+      {  hidden && <Welcome hide={setHidden}/> }
+      { !hidden && <Deck /> }     
     </div>
   );  
 }

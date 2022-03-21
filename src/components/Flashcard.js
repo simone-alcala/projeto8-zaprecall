@@ -1,5 +1,7 @@
 import {useState} from 'react';
 
+import Setinha from './../assets/setinha.png';
+
 function Flashcard(props){
   const {index, question, answer, answered, iconFooter} = props;
 
@@ -45,7 +47,7 @@ function Flashcard(props){
       { !hiddenQuestion && 
         <div className="card-question" >
         {question}
-        <img src="./images/setinha.png" alt="setinha" onClick={() => {
+        <img src={Setinha} alt="setinha" onClick={() => {
           setHiddenQuestion(!hiddenQuestion);
           setHiddenAnswer(!hiddenAnswer);
         }} />

@@ -3,8 +3,9 @@ import { useState } from 'react';
 import Flashcard from './Flashcard';
 import Footer from './Footer';
 
-function Deck(props){
-  const { className } = props;
+import Logo from './../assets/logo.png'
+
+function Deck(){
 
   const [answered, setAnswered] = useState(0);
   const [icon, setIcon] = useState([]);
@@ -56,21 +57,24 @@ function Deck(props){
   
   return(
     <>
-      <div className={"deck " + className}>
+      <div className="deck ">
         <div className="header">
-          <img src="./images/logo.png" alt="logo" /> 
+          <img src={Logo} alt="logo" /> 
           <span>ZapRecall</span>
         </div>
-        {        
-          deck1.map( ( {question,answer}, index ) => {
+        {deck1.map( ( {question,answer}, index ) => {
             return (
-              <Flashcard key ={index} question={question} answer={answer} index={index+1} 
-                answered={addAnswered} iconFooter={addIcon} /> 
-            );
-          })
-        }
+              <Flashcard  key ={index} 
+                          question={question}  
+                          answer={answer} 
+                          index={index+1} 
+                          answered={addAnswered} 
+                          iconFooter={addIcon} /> 
+            )})}
       </div>
-      <Footer className={className} length={deck1.length} answered={answered} icons={icon}/>
+      <Footer length={deck1.length} 
+              answered={answered} 
+              icons={icon}/>
     </>
   );
 }
